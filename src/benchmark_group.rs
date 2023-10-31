@@ -89,13 +89,13 @@ impl<'a, M: Measurement> BenchmarkGroup<'a, M> {
     /// A bigger sample should yield more accurate results if paired with a sufficiently large
     /// measurement time.
     ///
-    /// Sample size must be at least 10.
+    /// Sample size must be at least 2.
     ///
     /// # Panics
     ///
-    /// Panics if n < 10.
+    /// Panics if n < 2.
     pub fn sample_size(&mut self, n: usize) -> &mut Self {
-        assert!(n >= 10);
+        assert!(n >= 2);
 
         self.partial_config.sample_size = Some(n);
         self
